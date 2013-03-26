@@ -106,7 +106,7 @@
     <mvc:default-servlet-handler />
 
     <!-- Internationalization specific items go here -->
-    <!-- Load the message source file, e.g. messages_en.properties -->
+    <!-- Load the message source file, e.g. messages_en_US.properties -->
     <bean id="messageSource"
           class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <property name="basename" value="classpath:messages" />

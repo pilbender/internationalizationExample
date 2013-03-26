@@ -14,7 +14,7 @@
     </tr>
     <tr>
         <td>
-            <spring:message code="first.name"/>
+            ${firstName}
         </td>
         <td>
             <spring:message code="last.name"/>
