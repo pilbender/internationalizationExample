@@ -106,22 +106,26 @@
     <mvc:default-servlet-handler />
 
     <!-- Internationalization specific items go here -->
+    <!-- Load the message source file, e.g. messages_en.properties -->
     <bean id="messageSource"
           class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <property name="basename" value="classpath:messages" />
         <property name="defaultEncoding" value="UTF-8"/>
     </bean>
 
+    <!-- To detect a change in locale -->
     <bean id="localeChangeInterceptor"
           class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
         <property name="paramName" value="lang" />
     </bean>
 
+    <!-- Store the locale preference for the user in a cookie -->
     <bean id="localeResolver"
           class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
         <property name="defaultLocale" value="en"/>
     </bean>
 
+    <!-- Wire in the change interceptor -->
     <bean id="handlerMapping"
           class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
         <property name="interceptors">
